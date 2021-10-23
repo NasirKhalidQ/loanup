@@ -1,11 +1,9 @@
-import React from 'react';
-import Login from './Login';
-
+import React from "react";
+import Forgot from "./Forgot";
+import Login from "./Login";
 
 function App() {
-  return (
-    <Login />
-  );
+  return <Forgot />;
 }
 
 export default App;
