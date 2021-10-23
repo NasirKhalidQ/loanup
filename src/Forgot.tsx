@@ -14,7 +14,7 @@ import { useState } from "react";
 function Forgot() {
   document.body.style.backgroundColor = "#f6f9fa"; //can be done in a  better way using third party library react-helmet
 
-  const [selectedValue, setSelectedValue] = useState("email");
+  const [selectedValue, setSelectedValue] = useState<String>("email");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
@@ -40,7 +40,14 @@ function Forgot() {
             >
               Loanup
             </Typography>
-            <Typography variant="body2" sx={{ color: "#4B5563", mr: 2 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "#4B5563",
+                mr: 2,
+                display: { xs: "none", sm: "flex" },
+              }}
+            >
               Already have an account?
             </Typography>
             <Button
@@ -61,7 +68,11 @@ function Forgot() {
       <Grid container justifyContent="center">
         <Paper
           elevation={3}
-          sx={{ mt: 10, width: { sm: "95%", md: "50%" }, borderRadius: 2 }}
+          sx={{
+            mt: 15,
+            width: { sm: "95%", md: "60%", xl: "40%" },
+            borderRadius: 2,
+          }}
         >
           <Grid
             container
@@ -78,7 +89,7 @@ function Forgot() {
                 Please Select option to send link to reset password
               </Typography>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10} md={8}>
               <Paper
                 variant="outlined"
                 sx={{
@@ -144,7 +155,7 @@ function Forgot() {
                 </Grid>
               </Paper>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10} md={8}>
               <Paper
                 variant="outlined"
                 sx={{
@@ -207,7 +218,7 @@ function Forgot() {
                 </Grid>
               </Paper>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10} md={8}>
               <Button
                 sx={{
                   textTransform: "none",
