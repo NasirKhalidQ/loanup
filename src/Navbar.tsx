@@ -17,7 +17,7 @@ function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <Logo />
+            <Logo width={25} height={25} />
           </IconButton>
           <Typography
             variant="h4"
