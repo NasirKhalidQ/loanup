@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import { Button, Divider, Typography, InputLabel, Link } from "@mui/material";
+import { Button, Divider, Typography, InputLabel } from "@mui/material";
 import { ReactComponent as Google } from "./google.svg";
 import { ReactComponent as Logo } from "./logo.svg";
 import { ReactComponent as Revenue } from "./revenue.svg";
@@ -11,6 +11,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState<String>("");
@@ -119,6 +120,12 @@ function Login() {
             />
           </Grid>
           <Grid item xs={12}>
+            <Typography variant="body2">
+              Forgot Password?
+              <Link to="/forgot">Reset here</Link>
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
             <Button
               sx={{
                 textTransform: "none",
@@ -136,9 +143,7 @@ function Login() {
           <Grid item xs={12}>
             <Typography variant="body2">
               Not registered yet?
-              <Link href="#" variant="body2" color="#3554d1">
-                Create an account
-              </Link>
+              <Link to="#">Create an account</Link>
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{ mt: 18 }}>

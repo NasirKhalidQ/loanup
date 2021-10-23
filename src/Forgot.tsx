@@ -1,15 +1,12 @@
 import Grid from "@mui/material/Grid";
 import { Paper, Radio, Typography } from "@mui/material";
-import { ReactComponent as Logo } from "./logo.svg";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 function Forgot() {
   document.body.style.backgroundColor = "#f6f9fa"; //can be done in a  better way using third party library react-helmet
@@ -22,49 +19,7 @@ function Forgot() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar sx={{ backgroundColor: "white" }} position="static">
-          <Toolbar>
-            <IconButton
-              size="medium"
-              edge="start"
-              color="info"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <Logo />
-            </IconButton>
-            <Typography
-              variant="h4"
-              sx={{ color: "#3554d1", fontWeight: "bold", flexGrow: 1 }}
-            >
-              Loanup
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                color: "#4B5563",
-                mr: 2,
-                display: { xs: "none", sm: "flex" },
-              }}
-            >
-              Already have an account?
-            </Typography>
-            <Button
-              sx={{
-                textTransform: "none",
-                px: 5,
-                py: 1,
-                mr: 6,
-                backgroundColor: "#e4edfd",
-                color: "#3554d1",
-              }}
-            >
-              Sign in
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <Navbar />
       <Grid container justifyContent="center">
         <Paper
           elevation={3}
