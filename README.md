@@ -7,7 +7,7 @@ Webiste is deployed [here](https://loanup.netlify.app/) using [Netlify](https://
 
 \
 \
-.
+^\_^
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
