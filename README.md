@@ -7,6 +7,16 @@ Webiste is deployed [here](https://loanup.netlify.app/) using [Netlify](https://
 
 \
 \
+Screenshots of app in action.\
+\
+_Login screen_
+![Image of Login](public/imgs/login.png)
+
+_Forgot password_
+![Image of Login](public/imgs/forgot.png)
+
+_Send Reset Code_
+![Image of Login](public/imgs/reset.png)
 ^\_^
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
