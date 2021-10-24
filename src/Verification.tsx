@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 
 import { useRef } from "react";
 import Navbar from "./Navbar";
+import { useLocation } from "react-router";
 
 function Verification() {
   document.body.style.backgroundColor = "#f6f9fa"; //can be done in a  better way using third party library react-helmet
@@ -11,6 +12,14 @@ function Verification() {
   const two = useRef<HTMLInputElement | null>(null);
   const three = useRef<HTMLInputElement | null>(null);
   const four = useRef<HTMLInputElement | null>(null);
+
+  interface locationState {
+    title: String;
+    info: String;
+  }
+
+  const location = useLocation();
+  const state = location.state as locationState;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.id === "one") {
@@ -53,11 +62,11 @@ function Verification() {
             sx={{ py: 4 }}
           >
             <Grid item xs={12}>
-              <Typography variant="h4">Email Verification</Typography>
+              <Typography variant="h4">{state.title} Verification</Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography variant="body2">
-                We have sent a code to your Email ba**y@dipainhouse.com
+                We have sent a code to your {state.info}
               </Typography>
             </Grid>
             <Grid item xs={10} md={8}>

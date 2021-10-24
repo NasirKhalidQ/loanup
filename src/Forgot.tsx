@@ -7,11 +7,13 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { useHistory } from "react-router";
 
 function Forgot() {
   document.body.style.backgroundColor = "#f6f9fa"; //can be done in a  better way using third party library react-helmet
 
-  const [selectedValue, setSelectedValue] = useState<String>("email");
+  const [selectedValue, setSelectedValue] = useState<String>("Email");
+  const history = useHistory();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
@@ -51,10 +53,10 @@ function Forgot() {
                   borderRadius: 4,
                   ":hover": { cursor: "pointer" },
                   borderColor:
-                    selectedValue === "email" ? "#3554d1" : "lightgray",
+                    selectedValue === "Email" ? "#3554d1" : "lightgray",
                 }}
                 onClick={() => {
-                  setSelectedValue("email");
+                  setSelectedValue("Email");
                 }}
               >
                 <Grid container textAlign="left">
@@ -65,7 +67,7 @@ function Forgot() {
                         backgroundColor: "rgba(0, 0, 0, 0.04)",
                         m: 2,
                         color:
-                          selectedValue === "email" ? "#3554d1" : "inherit",
+                          selectedValue === "Email" ? "#3554d1" : "inherit",
                       }}
                     >
                       <MailOutlineIcon />
@@ -77,7 +79,7 @@ function Forgot() {
                       sx={{
                         mt: 1,
                         color:
-                          selectedValue === "email" ? "#3554d1" : "inherit",
+                          selectedValue === "Email" ? "#3554d1" : "inherit",
                       }}
                     >
                       Reset via Email
@@ -99,11 +101,11 @@ function Forgot() {
                       checkedIcon={
                         <CheckCircleIcon sx={{ color: "#3554d1" }} />
                       }
-                      checked={selectedValue === "email"}
+                      checked={selectedValue === "Email"}
                       onChange={handleChange}
-                      value="email"
+                      value="Email"
                       name="radio-buttons"
-                      inputProps={{ "aria-label": "email" }}
+                      inputProps={{ "aria-label": "Email" }}
                       sx={{ ":hover": { backgroundColor: "white" } }}
                     />
                   </Grid>
@@ -117,10 +119,10 @@ function Forgot() {
                   borderRadius: 4,
                   ":hover": { cursor: "pointer" },
                   borderColor:
-                    selectedValue === "sms" ? "#3554d1" : "lightgray",
+                    selectedValue === "SMS" ? "#3554d1" : "lightgray",
                 }}
                 onClick={() => {
-                  setSelectedValue("sms");
+                  setSelectedValue("SMS");
                 }}
               >
                 <Grid container textAlign="left">
@@ -130,7 +132,7 @@ function Forgot() {
                       sx={{
                         backgroundColor: "rgba(0, 0, 0, 0.04)",
                         m: 2,
-                        color: selectedValue === "sms" ? "#3554d1" : "inherit",
+                        color: selectedValue === "SMS" ? "#3554d1" : "inherit",
                       }}
                     >
                       <PhoneEnabledOutlinedIcon />
@@ -141,7 +143,7 @@ function Forgot() {
                       variant="h6"
                       sx={{
                         mt: 1,
-                        color: selectedValue === "sms" ? "#3554d1" : "inherit",
+                        color: selectedValue === "SMS" ? "#3554d1" : "inherit",
                       }}
                     >
                       Reset via SMS
@@ -162,11 +164,11 @@ function Forgot() {
                       checkedIcon={
                         <CheckCircleIcon sx={{ color: "#3554d1" }} />
                       }
-                      checked={selectedValue === "sms"}
+                      checked={selectedValue === "SMS"}
                       onChange={handleChange}
-                      value="sms"
+                      value="SMS"
                       name="radio-buttons"
-                      inputProps={{ "aria-label": "sms" }}
+                      inputProps={{ "aria-label": "SMS" }}
                       sx={{ ":hover": { backgroundColor: "white" } }}
                     />
                   </Grid>
@@ -184,6 +186,15 @@ function Forgot() {
                 }}
                 variant="contained"
                 size="large"
+                onClick={() =>
+                  history.push("/verification", {
+                    title: selectedValue,
+                    info:
+                      selectedValue === "Email"
+                        ? "Email ba**y@dipainhouse.com"
+                        : "Mobile Phone 911-***-**12",
+                  })
+                }
               >
                 Send Link
               </Button>
